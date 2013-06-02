@@ -32,6 +32,10 @@ module Rubyistokei
       haml :index
     end
 
+    get '/timer' do
+      haml :timer
+    end
+
     get '/css/screen.css' do
       scss :screen
     end
