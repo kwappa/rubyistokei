@@ -73,7 +73,7 @@ img.tokei-image {
   color: red;
 }
 
-.control-pannel {
+.control-panel {
   position: absolute;
   left: 32px;
   top:  32px;
@@ -82,8 +82,17 @@ img.tokei-image {
 
   .start-button {
     border: 1px solid green;
+    margin: 8px;
+    padding: 4px;
+    text-decoration: none;
+    color: white;
   }
+
   .stop-button {
     border: 1px solid red;
+    margin: 8px;
+    padding: 4px;
+    text-decoration: none;
+    color: white;
   }
 }

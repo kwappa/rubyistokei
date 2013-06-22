@@ -33,7 +33,12 @@ module Rubyistokei
     end
 
     get '/timer' do
-      haml :index, locals: { timer_mode: true }
+      limit = params[:limit].to_i
+      if limit <= 0 || limit >= 100
+        limit = 5
+      end
+
+      haml :index, locals: { timer_mode: true, time_limit: limit * 60 }
     end
 
     get '/css/screen.css' do

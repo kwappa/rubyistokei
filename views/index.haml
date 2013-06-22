@@ -1,4 +1,5 @@
 - timer_mode ||= false
+- time_limit ||= 0
 !!!
 %html
   %head
@@ -11,10 +12,7 @@
     %script(src="/js/jquery-1.9.1.min.js")
     %script(src="/js/knockout-2.2.1.js")
     %script(src="/js/knockout.mapping-latest.js")
-    - if timer_mode
-      %script(src="/js/timer.js")
-    - else
-      %script(src="/js/tokei.js")
+    %script(src="/js/tokei.js")
     :css
       body { background-color: #000; color: #fff; }
     %script(type="text/html" id="tokei-template")
@@ -47,5 +45,5 @@
 
         = haml :'partial/timer_control_panel' if timer_mode
 
-  %body
+  %body{ data: { timer_mode: timer_mode ? 'timer' : 'tokei', time_limit: time_limit } }
     %div(data-bind="template: {name: 'tokei-template', data: current}")
