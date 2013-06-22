@@ -33,7 +33,7 @@ module Rubyistokei
     end
 
     get '/timer' do
-      haml :timer
+      haml :index, locals: { timer_mode: true }
     end
 
     get '/css/screen.css' do
